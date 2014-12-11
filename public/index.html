@@ -1,0 +1,56 @@
+<html>
+  <head>
+	<title>
+      MQTT Websocket
+	</title>
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" media="all">
+
+  </head>
+  <body>
+	<div class="row">
+	  <div class="col-lg-9">
+		<h2>チャットルーム</h2>
+
+		<form role="form">
+		  <div class="form-group">
+			<label>トピック</label>
+			<input type="text" class="form-control" id="topic" value="handson/chat" readonly>
+		  </div>
+		  <div class="form-group">
+			<label id="sl"></label>
+			<input type="text" class="form-control" id="server" >
+			<label>ユーザー名</label>
+			<input type="text" class="form-control" id="username" >
+			<label>パスワード</label>
+			<input type="password" class="form-control" id="password" >
+		  </div>
+		  <div class="form-group">
+			<div class="col-lg-9">
+			  <div class="col-lg-6">
+				<button id="connect" type="button" class="btn btn-primary form-control">Connect</button>
+			  </div>
+			  <div class="col-lg-6">
+				<button id="disconnect" type="button" class="btn btn-warning form-control">Disconnect</button>
+			  </div>
+			</div>
+		  </div>
+		  <div class="form-group">
+			<label id="status">Disconnected</label>
+		  </div>
+		  <div class="form-group">
+			<label>メッセージ</label>
+			<input type="text" class="form-control" id="msg" >
+		  </div>
+		<textarea id="body" class="form-control" rows="3" readonly></textarea>
+			  <div class="col-lg-6">
+				<button id="clear" type="button" class="btn btn-info form-control">Clear</button>
+			  </div>
+		</form>
+	  </div>
+	</div>
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js" charset="utf-8"></script> 
+  <script type="text/javascript" src="/mqttws31.js" charset="utf-8"></script> 
+  <script type="text/javascript" src="/handson.js" charset="utf-8"></script>
+</body>
+</html>
