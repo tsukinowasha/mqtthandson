@@ -5,9 +5,6 @@
   var clientId = "handson-" + r;
 
   $("#sl").text("サーバー名 (clientId:" + clientId + ")");
-
-  var topic = "handson/chat"; // fixed topic name
-
   var client;
 
   $("#connect").on('click', function(){
@@ -34,6 +31,7 @@
   });
   $("#msg").on("keypress", function(e){
     if ( e.which == 13 ) {
+	  var topic = $("#topic").val();
       var body = $("#msg").val();
       var message = new Paho.MQTT.Message(body);
       message.destinationName = topic;
@@ -47,6 +45,7 @@
   };
   function onConnect() {
     $("#status").text("Connected");
+    var topic = $("#topic").val();
     client.subscribe(topic);
   };
   function onConnectionLost(responseObject) {
